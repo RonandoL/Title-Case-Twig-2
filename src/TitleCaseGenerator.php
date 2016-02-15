@@ -19,16 +19,14 @@
                     array_push($output_titlecased, ucfirst($word)); //capitalize each word and push it into output
                 }
             }
-            $first_word = array_shift($output_titlecased);//grab first word
-            $first_word = ucfirst($first_word);//capitalize first word
+            $first_word = array_shift($output_titlecased);//grab first word "the Shining" | "the"
+            $first_word = ucfirst($first_word);//capitalize first word "the Shining" | "The"
+            array_unshift($output_titlecased, $first_word);//put that first word back in the array "The Shining"
 
-            array_unshift($output_titlecased, $first_word);//put that first word back in the array
-            //foreach ($output_titlecased as $word) {
-                if (preg_match('/[^a-zA-Z]/', $output_titlecased[0])) {
-                    $output_titlecased[1] = ucfirst($output_titlecased[1]);
+            if (preg_match('/[^a-zA-Z]/', $output_titlecased[0])) {//if the first element in array is NOT a-z,A-Z then...
+                $output_titlecased[1] = ucfirst($output_titlecased[1]);//capitalize the 2nd element. 
+            }
 
-                }
-            //}
             return implode(" ", $output_titlecased);
         }
     }
