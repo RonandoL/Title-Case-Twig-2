@@ -20,6 +20,21 @@
             //Assert tells our tests what to expect from the output of our method.
             $this->assertEquals("Beowulf", $result);
         }  // we will declare a method to run our first test. When we run PHPUnit, our test class will be instantiated and each of its methods will be executed.
+
+        function test_makeTitleCase_multipleWords()
+        {
+            //Arrange
+            $test_TitleCaseGenerator = new TitleCaseGenerator;
+            $input = "cheese is delicious";
+
+            //Act: runs the actual method that we are testing
+            $result = $test_TitleCaseGenerator->makeTitleCase($input);
+
+            //Assert: tells our tests what to expect from the output of our method
+            $this->assertEquals("Cheese Is Delicious", $result);
+        }
+
+
     }
 
     // Run in terminal in project folder
