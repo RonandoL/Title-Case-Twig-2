@@ -26,4 +26,6 @@
     // export PATH=$PATH:./vendor/bin
     // phpunit test s
 
+    //alex: run this instead from home folder: ./vendor/bin/phpunit tests
+
 ?>
