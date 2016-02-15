@@ -36,18 +36,33 @@
         }
 
         // Test: Doesn't Capitalize Designated Words
-       function test_makeTitleCase_noCapsDesignatedWords()
+        function test_makeTitleCase_noCapsDesignatedWords()
+        {
+            //Arrange
+            $test_TitleCaseGenerator = new TitleCaseGenerator;
+            $input = "lord of the rings";
+
+            //Act
+            $result = $test_TitleCaseGenerator->makeTitleCase($input);
+
+            //Assert
+            $this->assertEquals("Lord of the Rings", $result);
+        }
+
+       // Test: Capitalizes Designated word if it's first word
+       function test_makeTitleCase_capFirstWords()
        {
            //Arrange
            $test_TitleCaseGenerator = new TitleCaseGenerator;
-           $input = "lord of the rings";
+           $input = "the shining";
 
            //Act
            $result = $test_TitleCaseGenerator->makeTitleCase($input);
 
            //Assert
-           $this->assertEquals("Lord of the Rings", $result);
-       }
+           $this->assertEquals("The Shining", $result);
+        }
+
 
 
     }
