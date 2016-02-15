@@ -12,26 +12,27 @@
 
 
 
-            foreach ($array_words_lowercase as $word) {
+            foreach ($array_words_lowercase as $word) {//for each word in that array
                 if (array_search($word, $dont_uppercase_words)) {
-                    array_push($output_titlecased, $word); //capitalize each word and push it into output
+                    array_push($output_titlecased, $word); //don't capitalize a word if it matches in the array.
                 } else {
                     array_push($output_titlecased, ucfirst($word)); //capitalize each word and push it into output
                 }
-            } //for each word in that array
-
-
+            }
             $first_word = array_shift($output_titlecased);//grab first word
             $first_word = ucfirst($first_word);//capitalize first word
+
             array_unshift($output_titlecased, $first_word);//put that first word back in the array
+            //foreach ($output_titlecased as $word) {
+                if (preg_match('/[^a-zA-Z]/', $output_titlecased[0])) {
+                    $output_titlecased[1] = ucfirst($output_titlecased[1]);
 
+                }
+            //}
             return implode(" ", $output_titlecased);
-
         }
     }
 
-
-
-
+//test area
 
 ?>
