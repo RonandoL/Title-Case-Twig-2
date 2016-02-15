@@ -21,9 +21,9 @@
             $this->assertEquals("Beowulf", $result);
         }  // we will declare a method to run our first test. When we run PHPUnit, our test class will be instantiated and each of its methods will be executed.
     }
-    
+
     // Run in terminal in project folder
     // export PATH=$PATH:./vendor/bin
-    // phpunit tests
+    // phpunit test s
 
 ?>
