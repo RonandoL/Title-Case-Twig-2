@@ -27,5 +27,6 @@
     // phpunit test s
 
     //alex: run this instead from home folder: ./vendor/bin/phpunit tests
+    //alex: then to run the test again each time, write phpunit tests
 
 ?>
