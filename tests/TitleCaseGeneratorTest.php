@@ -21,6 +21,7 @@
             $this->assertEquals("Beowulf", $result);
         }  // we will declare a method to run our first test. When we run PHPUnit, our test class will be instantiated and each of its methods will be executed.
 
+        // Test: Capitalize Multi Words
         function test_makeTitleCase_multipleWords()
         {
             //Arrange
@@ -31,15 +32,29 @@
             $result = $test_TitleCaseGenerator->makeTitleCase($input);
 
             //Assert: tells our tests what to expect from the output of our method
-            $this->assertEquals("Cheese Is Delicious", $result);
+            $this->assertEquals("Cheese is Delicious", $result);
         }
+
+        // Test: Doesn't Capitalize Designated Words
+       function test_makeTitleCase_noCapsDesignatedWords()
+       {
+           //Arrange
+           $test_TitleCaseGenerator = new TitleCaseGenerator;
+           $input = "lord of the rings";
+
+           //Act
+           $result = $test_TitleCaseGenerator->makeTitleCase($input);
+
+           //Assert
+           $this->assertEquals("Lord of the Rings", $result);
+       }
 
 
     }
 
     // Run in terminal in project folder
     // export PATH=$PATH:./vendor/bin
-    // phpunit test s
+    // phpunit tests
 
     //alex: run this instead from home folder: ./vendor/bin/phpunit tests
     //alex: then to run the test again each time, write phpunit tests
