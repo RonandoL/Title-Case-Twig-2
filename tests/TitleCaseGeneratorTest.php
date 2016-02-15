@@ -62,6 +62,17 @@
            //Assert
            $this->assertEquals("The Shining", $result);
         }
+        function test_makeTitleCase_nonLetterCharacters()
+        {
+            //Arrange
+            $test_TitleCaseGenerator = new TitleCaseGenerator;
+            $input = "42 the shining";
+            //Act
+            $result = $test_TitleCaseGenerator->makeTitleCase($input);
+            //Assert
+            $this->assertEquals("42 The Shining", $result);
+        }
+
 
 
 
