@@ -80,8 +80,24 @@
             //Arrange
             $test_TitleCaseGenerator = new TitleCaseGenerator;
             $input = "THE SHINING";
+
             //Act
             $result = $test_TitleCaseGenerator->makeTitleCase($input);
+
+            //Assert
+            $this->assertEquals("The Shining", $result);
+        }
+
+        // Manages mixed case entries
+        function test_makeTitleCase_mixedCaseCharacters()
+        {
+            //Arrange
+            $test_TitleCaseGenerator = new TitleCaseGenerator;
+            $input = "tHe sHiNiNG";
+            
+            //Act
+            $result = $test_TitleCaseGenerator->makeTitleCase($input);
+
             //Assert
             $this->assertEquals("The Shining", $result);
         }
